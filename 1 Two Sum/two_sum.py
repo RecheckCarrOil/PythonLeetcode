@@ -2,12 +2,9 @@ from typing import List
 
 
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        viable_indices = []
-        for num in nums:
-            if (num <= target and target >= 0) or (num >= target and target < 0):
-                viable_indices.append(nums.index(num))
-        for ind in viable_indices:
+    @staticmethod
+    def twoSum(nums: List[int], target: int) -> List[int]:
+        for ind in range(len(nums)):
             nums_copy = nums.copy()
             nums_copy.pop(ind)
             for num in nums_copy:
